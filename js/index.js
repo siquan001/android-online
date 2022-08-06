@@ -1,0 +1,153 @@
+'use strict';
+//获取所有元素
+var topbar=$('.phone>.topbar'),
+    topbar_time=$('.topbar>.center'),
+    appframe=$('.phone>.appframe iframe#page'),
+    deskframe=$('.phone>.appframe iframe#desk'),
+    lockframe=$('.phone>.appframe iframe#lock'),
+    footer=$('.phone>.footer'),
+    menu_key=$('.phone>.footer .menu-key'),
+    home_key=$('.phone>.footer .home-key'),
+    back_key=$('.phone>.footer .back-key'),
+    menu_main=$('.phone>.menu>.menu-main'),
+    menu_bg=$('.phone>.menu>.menu-bg'),
+    service=$('.phone>.service'),
+    over=$('.phone>.over'),
+    menu_range_p1=$('.phone>.menu .range span.p1'),
+    menu_range_p2=$('.phone>.menu .range span.p2'),
+    menu_range_p3=$('.phone>.menu .range span.p3'),
+    appzz=$('.phone>.appframe .zz'),
+    lock=$('.phone>.menu .lock');
+//亮度
+var LIGHT=1;
+setLight(LIGHT);
+topbar.mousedown(function (e) { 
+    appzz.show();
+    var y=e.pageY,ny;
+    document.onmousemove=function(e){
+        e.preventDefault();
+        ny=e.pageY;
+        menu_main.css('top',ny/2+'px');
+    };
+    document.onmouseup=function(){
+        console.log('up');
+    appzz.hide();
+        
+        if(ny-y>150){
+            menu_main.css('top','0');
+            menu_main.css('transform','none');
+            menu_bg.css('opacity','1');
+            menu_bg.css('pointer-events','all');
+        }else{
+            menu_main.css('top','0');
+        }
+        document.onmousemove=null;
+        document.onmouseup=null;
+    }
+});
+topbar.get()[0].ontouchstart=function (e) { 
+    var y=e.targetTouches[0].pageY,ny;
+    document.ontouchmove=function(e){
+        e.preventDefault();
+        ny=e.targetTouches[0].pageY;
+        menu_main.css('top',ny/2+'px');
+    };
+    document.ontouchend=function(){
+        if(ny-y>150){
+            menu_main.css('top','0');
+            menu_main.css('transform','none');
+            menu_bg.css('opacity','1');
+            menu_bg.css('pointer-events','all');
+        }else{
+            menu_main.css('top','0');
+        }
+        document.ontouchmove=null;
+        document.ontouchend=null;
+    }
+};
+menu_bg.click(function(){
+    menu_main.attr('style','');
+    menu_bg.attr('style','');
+});
+    
+menu_range_p3.mousedown(function (e) { 
+    var x=e.pageX,nx,w=menu_range_p1.width(),t;
+    document.onmousemove=function(e){
+        e.preventDefault();
+        nx=e.pageX;
+        t=(nx-x)/w+LIGHT;
+        t=t>=1?1:t;
+        t=t<=0?0:t;
+        setLight(t);
+    };
+    document.onmouseup=function(){
+        LIGHT=t;
+        document.onmousemove=null;
+        document.onmouseup=null;
+    }
+});
+menu_range_p3.get()[0].ontouchstart=function (e) { 
+    var x=e.targetTouches[0].pageX,nx,w=menu_range_p1.width(),t;
+    document.ontouchmove=function(e){
+        e.preventDefault();
+        nx=e.targetTouches[0].pageX;
+        t=(nx-x)/w+LIGHT;
+        t=t>=1?1:t;
+        t=t<=0?0:t;
+        setLight(t);
+    };
+    document.ontouchend=function(){
+        LIGHT=t;
+        document.ontouchmove=null;
+        document.ontouchend=null;
+    }
+};
+function setLight(l){
+    over.css('opacity',1-l+'');
+    menu_range_p2.css('--w',l+'');
+    menu_range_p3.css('left',l*100+'%')
+}
+function startPage(pageName){
+
+}
+function startPageWithSystem(pageName){
+    
+}
+home_key.click(function(){
+    if(!appframe.src){
+        deskframe.get()[0].contentWindow.setTab(0);
+    }
+});
+var ISMENU_SHOW=false;
+menu_key.click(function(){
+    if(lockframe.css('display')=='none'){
+        if(ISMENU_SHOW){
+            service.css({
+                'opacity':'0',
+                'pointer-events':'none'
+            });
+            ISMENU_SHOW=false;
+        }else{
+            service.css({
+                'opacity':'1',
+                'pointer-events':'all'
+            });
+            ISMENU_SHOW=true;
+        }
+    }
+
+})
+lock.click(function(){
+    lockframe.show();
+    menu_bg.click();
+});
+window.onload=function(){
+    $('.loading').css({
+        'opacity':'0',
+        'pointer-events':'none'
+    })
+}
+
+
+
+    

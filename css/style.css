@@ -1,0 +1,428 @@
+.phone {
+    width: 100%;
+    max-width: 420px;
+    background-color: #fff;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* TOPBAR */
+.topbar {
+    width: 100%;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #666;
+    color: #fff;
+    line-height: 24px;
+    z-index: 6;
+}
+
+.topbar .left {
+    float: left;
+}
+
+.topbar .right {
+    float: right;
+}
+
+.topbar .center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.topbar .icon {
+    width: 24px;
+    height: 24px;
+    /* 原本图片是黑色的，但背景也是黑色的，所以要把图标的颜色反过来 */
+    filter: invert(100%) hue-rotate(180deg);
+    float: left;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 2px 2px;
+}
+
+.topbar .dianliang {
+    float: left;
+}
+
+.topbar .xinhao-icon {
+    background-image: url(../img/xinhao.png);
+}
+
+.topbar .wifi-icon {
+    background-image: url(../img/wifi.svg);
+}
+
+.topbar .battary-icon {
+    background-image: url(../img/battary.png);
+}
+
+/* TOPBAR END*/
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 6;
+}
+
+.footer .key {
+    width: 40px;
+    height: 30px;
+    background-position: 10px 5px;
+    background-repeat: no-repeat;
+    transition: background .3s;
+    background-size: 20px;
+}
+
+.footer .key:active {
+    background-color: #888;
+}
+
+.footer .menu-key {
+    background-image: url(../img/menu.png);
+}
+
+.footer .home-key {
+    background-image: url(../img/home.svg);
+}
+
+.footer .back-key {
+    background-image: url(../img/back.png);
+}
+
+/* FOOTER END*/
+
+.over {
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+}
+
+/*  SERVICE */
+
+.appframe,
+.service {
+    width: 100%;
+    height: calc(100% - 54px);
+    position: absolute;
+    top: 24px;
+    left: 0;
+}
+
+.service {
+    z-index: 80;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    transition: opacity .3s!important;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*  SERVICE END*/
+/* MENU */
+
+.menu {
+    z-index: 90;
+    width: 100%;
+    height: calc(100% - 30px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.menu * {
+    pointer-events: all;
+}
+
+.menu-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.menu-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform: translateY(-100%);
+    transition: transform .3s, top .3s;
+}
+
+.menu .topbar {
+    background-color: transparent;
+    color: #000;
+    position: relative;
+}
+
+.menu .topbar .icon {
+    /* 在menu中状态栏的背景是白色所以图标颜色不变 */
+    filter: none;
+}
+
+.menu .quicktime {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.menu .quicktime .date {
+    float: left;
+    padding-left: 1em;
+}
+
+.menu .quicktime .setting-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 1em;
+    background-image: url(../img/setting.svg);
+    background-repeat: no-repeat;
+    float: right;
+    background-position: center;
+}
+
+.menu .menuicons {
+    width: 100%;
+    height: 60px;
+}
+
+.menu .menuicons ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+.menu .menuicons ul li {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .menuicons ul li svg {
+    fill: #666;
+}
+
+.menu .menuicons ul li.select {
+    background-color: blue;
+}
+
+.menu .menuicons ul li.select svg {
+    fill: #fff;
+}
+
+.menu .light {
+    width: calc(100% - 10px);
+    height: 30px;
+    padding: 5px 5px;
+}
+
+.menu .light .light-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.menu .light .range {
+    width: calc(100% - 50px);
+    height: 100%;
+    float: left;
+    position: relative;
+    margin: 0 10px;
+}
+
+.menu .light .range span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu .light .range span.p1 {
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: rgba(59, 130, 246, .5);
+    left: 0;
+}
+
+.menu .light .range span.p2 {
+    --w: 0;
+    width: calc(100% * var(--w));
+    left: 0;
+    height: 2px;
+    border-radius: 5px;
+    background-color: rgb(25, 118, 210);
+}
+
+.menu .light .range span.p3 {
+    background-color: rgb(25, 118, 210);
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.menu .light .range span.p3::after {
+    content: '';
+    background-color: rgb(25, 118, 210, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all .3s;
+    border-radius: 50%;
+}
+
+.menu .light .range span.p3:hover::after {
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+}
+
+.menu .light .range span.p3:active::after {
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+}
+
+.menu .bottom-hr {
+    width: 100px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #ccc;
+    margin: 10px auto;
+}
+
+/* MENU END*/
+/* APPFRAME */
+
+.appframe iframe,
+.appframe .zz {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.appframe iframe .desk {
+    z-index: 1;
+}
+
+.appframe iframe .lock {
+    z-index: 9;
+}
+
+.appframe iframe .page {
+    display: none;
+}
+
+.appframe .zz {
+    z-index: 20;
+    display: none;
+}
+
+/* APPFRAME END*/
+.loading{
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: #0e0e01;
+    color: #fefef1;
+    position: absolute;
+    top: 0;left: 0;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity .3s;
+}
+.loading div span{
+    animation: loading 1.75s infinite;
+    display: block;
+    float: left;
+}
+.loading div span:nth-child(2){
+    animation-delay: .1s;
+}
+.loading div span:nth-child(3){
+    animation-delay: .2s;
+}
+.loading div span:nth-child(4){
+    animation-delay: .3s;
+}
+.loading div span:nth-child(5){
+    animation-delay: .4s;
+}
+.loading div span:nth-child(6){
+    animation-delay: .5s;
+}
+.loading div span:nth-child(7){
+    animation-delay: .6s;
+}
+@keyframes loading {
+    0%{
+        transform: translateY(0px);
+    }
+    5%{
+        transform: translateY(-15px);
+    }
+    10%{
+        transform: translateY(5px);
+    }14%{
+        transform: translateY(0px);
+    }
+}

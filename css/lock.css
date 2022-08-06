@@ -1,0 +1,48 @@
+body{
+    background-color: #fff;
+    background-image: url(../img/lockbg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.time{
+    position: absolute;
+    top: 0;left: 0;padding: 10px;
+}
+.time .t{
+    font-size: 60px;
+}
+.time .d{
+    font-size: 20px;
+}
+.up{
+    position: absolute;
+    bottom: 0;
+    left: 0;width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.up .up-icon{
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/back.png);
+    background-size: 30px;
+    transform: rotate(90deg);
+    animation: upani 2s linear infinite;
+}
+.up .up-text{
+    font-size: 16px;
+    line-height: 30px;
+}
+@keyframes upani {
+    0%{
+        transform: rotate(90deg);
+        opacity: 1;
+    }50%{
+        transform: rotate(90deg) translateX(-50px);
+        opacity: 0.3;
+    }100%{
+        transform: rotate(90deg);
+        opacity: 1;
+    }
+}

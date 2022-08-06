@@ -1,0 +1,87 @@
+body{
+    background-color: #fdc0bd;
+    background-repeat: no-repeat;
+    background-size:240%;
+    background-image: url(../img/bg.jpg);
+}
+.tabs{
+    --tab:3;
+    width: calc(100% * var(--tab));
+    height: calc(100% - 100px);
+    position: absolute;
+    top: 0;left: 0;
+}
+.tabs .tab{
+    width: calc(100% / var(--tab));
+    float: left;
+    height: 100%;
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+}
+.tabs .tab .widght.time{
+    grid-area: 1/1/3/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.tabs .tab .widght.time .t .n{
+    font-size: 50px;
+}
+.tabhost{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(100% - 100px);
+    left: 0;
+}
+.tabhost span{
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #aaa;
+    border-radius: 50%;
+}
+.tabhost span.select{
+    background-color: #666;
+}
+.pins{
+    width: 100%;
+    height: 80px;
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 80px;
+    overflow: hidden;
+    position: absolute;
+    top: calc(100% - 80px);
+    left: 0;
+}
+.appitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.appitem img{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    transition: transform .3s;
+}
+.appitem img:active{
+    transform: scale(0.8);
+}
+.appitem p{
+    line-height: 24px;
+    font-size: 14px;
+}

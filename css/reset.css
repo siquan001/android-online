@@ -1,0 +1,45 @@
+/* 引入Google Sans 字体 */
+@import url(https://fonts.googleapis.com/css2?family=Google+Sans);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+SC);
+* {
+    margin: 0;
+    padding: 0;
+    /* 禁止复制 */
+    user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    /* 防止move时e.preventDefault();导致的错误 */
+    touch-action: pan-y;
+}
+
+body {
+    background-color: #000;
+    /* 适应手机100vh显示不正常的BUG */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'Google Sans','Noto Sans SC',Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+/* 其他的两种字体 */
+@font-face {
+    font-family: 'FangZhengZiTi';
+    src: url(../raw/FZLTHJW.TTF);
+}
+
+@font-face {
+    font-family: SamsungOne500;
+    src: url(../raw/SamsungOneKorean-500.woff2) format('woff2');
+}
+
