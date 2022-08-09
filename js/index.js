@@ -214,10 +214,8 @@ function startPage(go,t){
         a.classList.add('page');
         document.querySelector('.appframe').append(a);
         a.src='app/'+go+'/pages/'+(t||AllInstallApp[go].start);
-        a.onload=function(){
-            $(a).css('animation','page .3s');
-            $(a).show();
-        };
+        $(a).css('animation','page .3s');
+        $(a).show();
     }
 }
 
