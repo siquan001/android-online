@@ -7,3 +7,4 @@ Android Online 还处于开发阶段，还有许多重要模块、功能和应�
 Android Online 开发团队仅有一人，如果你也对我的项目感兴趣的话，可以通过我的邮箱或issue（最好用邮箱）联系我。
 海内存知己，天涯若比邻。
 ### 我的邮箱：<a href='mailto:chensiquan2022@163.com'>chensiquan2022@163.com</a>
+### 体验地址：<a href='https://smalla001.github.io/android-online/'>https://smalla001.github.io/android-online/</a>
