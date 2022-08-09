@@ -1,5 +1,6 @@
 /* 引入Google Sans 字体 */
 @import url(https://fonts.googleapis.com/css2?family=Google+Sans);
+@import url(https://fonts.googleapis.com/css2?family=Roboto);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+SC);
 * {
     margin: 0;
@@ -21,7 +22,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    font-family: 'Google Sans','Noto Sans SC',Arial, Helvetica, sans-serif;
+    font-family: 'Roboto','Noto Sans SC',Arial, Helvetica, sans-serif;
     overflow: hidden;
 }
 

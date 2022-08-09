@@ -13,6 +13,7 @@ document.onmousedown=function(e){
             parent.document.querySelector('iframe#lock').style.transition='all .3s';
             parent.document.querySelector('iframe#lock').style.top='-100%';
             setTimeout(function() {
+            parent.document.querySelector('iframe#lock').style.top='0';
                 parent.document.querySelector('iframe#lock').style.display='none';
                 parent.document.querySelector('iframe#lock').style.transition='none';
             }, 300);

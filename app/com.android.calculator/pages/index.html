@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../webappUI/ui.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="topframe">
+        <div class="a"></div>
+        <div class="b">0</div>
+    </div>
+    <div class="keys">
+        <div class="key" style="background-color: red;">AC</div>
+        <div class="key">C</div>
+        <div class="key"><</div>
+        <div class="key">+</div>
+        <div class="key">1</div>
+        <div class="key">2</div>
+        <div class="key">3</div>
+        <div class="key">-</div>
+        <div class="key">4</div>
+        <div class="key">5</div>
+        <div class="key">6</div>
+        <div class="key">×</div>
+        <div class="key">7</div>
+        <div class="key">8</div>
+        <div class="key">9</div>
+        <div class="key">÷</div>
+        <div class="key">.</div>
+        <div class="key">0</div>
+        <div class="key" style="grid-area: 5/3/6/5;">=</div>
+        
+    </div>
+</body>
+<script src="../../../webappUI/ui.js"></script>
+<script>
+    UI.fn.init({
+        topbarColor:'#eee',
+        footerColor:'#aaa',
+        package:'com.android.calculator'
+    });
+    UI.ripple.calls(document.querySelectorAll('.key'));
+    var a=document.querySelector('.topframe .a');
+    var b=document.querySelector('.topframe .b');
+    document.querySelectorAll('.key').forEach(element => {
+        element.onclick=function(){
+            var k=this.innerText;
+            if(k=='1'||k=='2'||k=='3'||k=='4'||k=='5'||k=='6'||k=='7'||k=='8'||k=='9'){
+                if(b.innerHTML=='0'){
+                    b.innerHTML=k;
+                }else{
+                    b.innerHTML+=k;
+                }
+            }else if(k=='0'){
+                var aaa=b.innerHTML.substring(b.innerHTML.length-2,b.innerHTML.length-1);
+                var aab=aaa=='+'||aaa=='-'||aaa=='×'||aaa=='÷';
+                var aac=b.innerHTML.substring(b.innerHTML.length-1,b.innerHTML.length);
+                if(b.innerHTML=='0'){}
+                else if(aab&&aac=='0'){}else{
+                    b.innerHTML+=k;
+                }
+            }else if(k=='+'||k=='-'||k=='×'||k=='÷'){
+                var aac=b.innerHTML.substring(b.innerHTML.length-1,b.innerHTML.length);
+                if(aac=='.'){}
+                else if(aac=='+'||aac=='-'||aac=='×'||aac=='÷'){
+                    b.innerHTML=b.innerHTML.substring(0,b.innerHTML.length-1)+k;
+                }else{
+                    b.innerHTML+=k;
+                }
+            }else if(k=='.'){
+                var aac=b.innerHTML.substring(b.innerHTML.length-1,b.innerHTML.length);
+                var aab=Math.max(b.innerHTML.lastIndexOf('+'),b.innerHTML.lastIndexOf('-'),b.innerHTML.lastIndexOf('×'),b.innerHTML.lastIndexOf('÷'));
+                if(aac=='+'||aac=='-'||aac=='×'||aac=='÷'){}
+                else if(b.innerHTML.substring(aab+1,b.innerHTML.length).indexOf('.')!=-1){}
+                else{b.innerHTML+=k;}
+            }else if(k=='C'){
+                b.innerHTML='0';
+            }else if(k=='AC'){
+                a.innerHTML='';
+                b.innerHTML='0';
+            }else if(k=='<'){
+                if(b.innerHTML.length!=0){
+                    b.innerHTML=b.innerHTML.substring(0,b.innerHTML.length-1);
+                }
+            }else if(k=='='){
+                a.innerHTML=b.innerHTML;
+                var ss=b.innerHTML.replaceAll('×','*').replaceAll('÷','/');
+                eval('var result='+ss);
+                b.innerHTML=result;
+            }
+            b.scrollLeft=1000000;
+        }
+    });
+</script>
+</html>

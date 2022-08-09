@@ -10,14 +10,17 @@
 /* TOPBAR */
 .topbar {
     width: 100%;
-    height: 24px;
+    height: 30px;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #666;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
     line-height: 24px;
     z-index: 6;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-top: 6px;
 }
 
 .topbar .left {
@@ -27,10 +30,15 @@
 .topbar .right {
     float: right;
 }
-
+.topbar .left *{
+    float: left;
+}
+.topbar .right *{
+    float: left;
+}
 .topbar .center {
     position: absolute;
-    top: 0;
+    top: 6px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -39,12 +47,12 @@
 .topbar .icon {
     width: 24px;
     height: 24px;
-    /* 原本图片是黑色的，但背景也是黑色的，所以要把图标的颜色反过来 */
-    filter: invert(100%) hue-rotate(180deg);
+    /* 原本图片是黑色的，但背景也是黑色的，所以要把图标的颜色反过来
+    filter: invert(100%) hue-rotate(180deg); */
     float: left;
-    background-size: 20px;
+    background-size: 14px;
     background-repeat: no-repeat;
-    background-position: 2px 2px;
+    background-position: 5px 5px;
 }
 
 .topbar .dianliang {
@@ -72,7 +80,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     display: flex;
     justify-content: space-around;
     padding: 0 20px;
@@ -85,12 +93,12 @@
     height: 30px;
     background-position: 10px 5px;
     background-repeat: no-repeat;
-    transition: background .3s;
+    transition:transform .3s;
     background-size: 20px;
 }
 
 .footer .key:active {
-    background-color: #888;
+    transform: scale(0.8);
 }
 
 .footer .menu-key {
@@ -115,7 +123,7 @@
     top: 0;
     left: 0;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     opacity: 0;
 }
 
@@ -124,14 +132,14 @@
 .appframe,
 .service {
     width: 100%;
-    height: calc(100% - 54px);
+    height: 100%;
     position: absolute;
-    top: 24px;
+    top: 0;
     left: 0;
 }
 
 .service {
-    z-index: 80;
+    z-index: 5;
     opacity: 0;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0.4);
@@ -268,11 +276,12 @@
 }
 
 .menu .light .range {
-    width: calc(100% - 50px);
+    width: calc(100% - 60px);
     height: 100%;
     float: left;
     position: relative;
-    margin: 0 10px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .menu .light .range span {
@@ -355,22 +364,24 @@
     top: 0;
     left: 0;
 }
-
-.appframe iframe .desk {
+.appframe iframe#desk {
     z-index: 1;
 }
 
-.appframe iframe .lock {
+.appframe iframe#lock {
     z-index: 9;
 }
 
-.appframe iframe .page {
+.appframe iframe.page {
     display: none;
+    background-color: #fff;
 }
 
 .appframe .zz {
     z-index: 20;
     display: none;
+    height: calc(100% - 60px);
+    top: 30px;
 }
 
 /* APPFRAME END*/
@@ -424,5 +435,26 @@
         transform: translateY(5px);
     }14%{
         transform: translateY(0px);
+    }
+}
+@keyframes page {
+    0%{
+        top: 100px;
+        opacity: 0.4;
+    }50%{
+        top: 50px;
+        opacity: 0.3;
+    }100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes page-d {
+    0%{
+        top: 0;
+        opacity: 1;
+    }100%{
+        top: 200px;
+        opacity: 0;
     }
 }

@@ -3,6 +3,8 @@ body{
     background-image: url(../img/lockbg.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+    box-sizing: border-box;
+    margin: 30px 0;
 }
 .time{
     position: absolute;

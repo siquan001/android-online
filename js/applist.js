@@ -1,7 +1,27 @@
-var AllInstallApp={
-    'com.android.brower':{
+var SystemApp={
+    'os.desk':{
+        name:'系统桌面'
+    },
+    'os.lock':{
+        name:'系统锁屏'
+    },
+    'os.time':{
+        name:'系统时间服务'
+    },
+    'os.web.h5':{
+        name:'HTML5中枢服务'
+    },
+    'os.web.browser':{
+        name:'浏览器中枢服务'
+    },
+    'os.start':{
+        name:'开机引导'
+    },
+}
+var BuiltInApp={
+    'com.android.browser':{
         name:'浏览器',
-        icon:'../img/ssbrowser.png',
+        icon:'@image/ssbrowser.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html',
@@ -9,35 +29,35 @@ var AllInstallApp={
     },
     'com.android.settings':{
         name:'设置',
-        icon:'../img/settings.png',
+        icon:'@image/settings.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html'
     },
     'com.android.calculator':{
         name:'计算器',
-        icon:'../img/sscalculator.png',
+        icon:'@image/sscalculator.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html'
     },
     'com.android.calender':{
         name:'日历',
-        icon:'../img/sscalender.png',
+        icon:'@image/sscalender.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html'
     },
     'com.android.store':{
         name:'应用商店',
-        icon:'../img/ssapps.png',
+        icon:'@image/ssapps.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html'
     },
     'com.android.phone':{
         name:'电话',
-        icon:'../img/ssphone.png',
+        icon:'@image/ssphone.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html',
@@ -45,50 +65,36 @@ var AllInstallApp={
     },
     'com.android.clock':{
         name:'时钟',
-        icon:'../img/ssclock.png',
+        icon:'@image/ssclock.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html'
     },
     'com.android.notes':{
         name:'便签',
-        icon:'../img/ssnotes.png',
+        icon:'@image/ssnotes.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html'
     },
     'com.android.music':{
         name:'音乐',
-        icon:'../img/ssmusic.png',
+        icon:'@image/ssmusic.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html'
     },
     'com.android.contacts':{
         name:'联系人',
-        icon:'../img/contacts.png',
+        icon:'@image/contacts.png',
         version:'1.0.0',
         versionId:1,
         start:'index.html',
         pin:true
     },
-    'com.google.chrome':{
-        name:'Chrome',
-        icon:'../img/chrome.png',
-        version:'1.0.0',
-        versionId:1,
-        start:'index.html'
-    },
-    'com.baidu.search':{
-        name:'百度',
-        icon:'../img/baidu.png',
-        version:'1.0.0',
-        versionId:1,
-        start:'index.html'
-    },
-    'https://github.com/smalla001':{
+    'https://github.com/smalla001/android-online':{
         name:'Github',
         icon:'../img/github.png',
         pin:true
-    },
+    }
 };

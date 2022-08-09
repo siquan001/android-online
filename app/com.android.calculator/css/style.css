@@ -1,0 +1,55 @@
+.topframe{
+    width: 100%;
+    height:30%;
+    background-color: rgb(95,95,95);
+    position: relative;
+}
+.topframe .b{
+    width: 100%;
+    white-space: nowrap;
+    overflow: scroll;
+    font-size: 36px;
+    color: #fff;
+    text-align: right;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    line-height: 70px;
+    letter-spacing: 3px;
+}
+.topframe .a{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    line-height: 30px;
+    font-size: 16px;
+    color: #aaa;
+    position: absolute;
+    bottom: 70px;left: 0;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+.topframe .a::-webkit-scrollbar,.topframe .b::-webkit-scrollbar{
+    display: none;
+}
+.keys{
+    width: 100%;
+    height:70%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    user-select: none;
+}
+.keys .key{
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    box-sizing: border-box;
+    border:#000 solid 1px;
+    color: #fff;
+    position: relative;
+}

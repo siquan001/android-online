@@ -1,0 +1,38 @@
+*{
+    margin: 0;padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+.quick-ui-topbar{
+    width: 100%;
+    height: 30px;
+}
+.quick-ui-footer{
+    width: 100%;
+    height: 30px;
+}
+.ui-app-body{
+    width: 100%;
+    height: calc(100% - 60px);
+}
+ripple-span{
+    width: 0;height: 0;position: absolute;
+    display: block;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    animation: ripple .3s;
+    border-radius: 50%;
+}
+@keyframes ripple {
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0.6;
+    }100%{
+        width: 150px;
+        height: 150px;
+        opacity: 0.1;
+    }
+}
