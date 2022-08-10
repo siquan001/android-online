@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../../webappUI/ui.css">
-    <style>
-        .ui-app-body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        img{
-            width: 150px;
-            height: 150px;
-            border-radius: 60px;
-        }
-        p{
-            font-size: 24px;
-            margin-top: 70px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <img src='../images/sscalender.png'/>
-    <p>日历</p>
+    <div class="topbar">日历</div>
+    <div class="calender-main">
+        <div class="calender-head">
+            <div class="calender-scope"></div>
+            <div class="calender-toggle">
+                <div class="last bi bi-chevron-up"></div>
+                <div class="next bi bi-chevron-down"></div>
+            </div>
+        </div>
+        <div class="calender-week">
+            <div class="weekday">日</div>
+            <div class="weekday">一</div>
+            <div class="weekday">二</div>
+            <div class="weekday">三</div>
+            <div class="weekday">四</div>
+            <div class="weekday">五</div>
+            <div class="weekday">六</div>
+        </div>
+        <div class="calender-body">
+            <table>
+                <tbody>
+                
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="setNowBtn" onclick="setNow()">今</div>
 </body>
 <script src="../../../webappUI/ui.js"></script>
 <script>
@@ -34,5 +44,8 @@
         footerColor:'#aaa',
         package:'com.android.calender'
     });
+    UI.ripple.call(document.querySelector('.setNowBtn'));
 </script>
+<script src="../js/nongli.js"></script>
+<script src="../js/script.js"></script>
 </html>
