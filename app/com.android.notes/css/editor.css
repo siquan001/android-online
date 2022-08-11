@@ -1,0 +1,73 @@
+.editor{
+    width: 100%;
+    height: 100%;
+}
+.editor input#title{
+    border: 0;
+    outline: 0;
+    border-bottom: #999 solid 2px;
+    width: calc(100% - 20px);
+    height: 30px;
+    margin: 10px;
+    font-size: 16px;
+    transition: all .3s;
+    font-family: 'Noto Sans SC';
+}
+.editor input#title:focus{
+    border-bottom-color: #e75a30;
+}
+.editor textarea#text{
+    border: 0;
+    outline: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 70px);
+    margin: 10px;
+    font-size: 16px;
+    transition: all .3s;
+    font-family: 'Noto Sans SC';
+    resize: none;
+}
+.float-ok-btn{
+    width: 50px;
+    height: 50px;
+    position: absolute!important;
+    border-radius: 50%;
+    background-color: chartreuse;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.float-ok-btn::after,.float-ok-btn::before{
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #fff;
+}
+.float-ok-btn::after{
+    width: 15px;
+    height: 3px;
+    top: 55%;
+    left: calc(50% - 15px);
+    transform: rotate(45deg);
+}
+.float-ok-btn::before{
+    width: 25px;
+    height: 3px;
+    top: 50%;
+    left: 36%;
+    transform: rotate(-45deg);
+}
+.float-cancel-btn{
+    width: 30px;
+    height: 30px;
+    position: absolute!important;
+    border-radius: 50%;
+    background-color: red;
+    bottom: 20px;
+    right: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}

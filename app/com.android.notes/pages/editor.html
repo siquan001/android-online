@@ -5,18 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../webappUI/ui.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/editor.css">
 </head>
 <body>
-    <div class="topbar">
-        便签
+    <div class="editor">
+        <input type="text" id='title' placeholder="标题">
+        <textarea id="text" placeholder="文字"></textarea>
     </div>
-    <div class="notes-main">
-        <ul>
-        
-        </ul>
-    </div>
-    <div class="float-icon">+</div>
+    <div class="float-ok-btn"></div>
+    <div class="float-cancel-btn">×</div>
 </body>
 <script src="../../../webappUI/ui.js"></script>
 <script>
@@ -25,8 +22,9 @@
         footerColor:'#aaa',
         package:'com.android.notes'
     });
-    UI.ripple.call(document.getElementsByClassName('float-icon')[0])
+    UI.ripple.call(document.getElementsByClassName('float-ok-btn')[0])
+    UI.ripple.call(document.getElementsByClassName('float-cancel-btn')[0])
     // UI.ripple.calls(document.querySelectorAll('.notes-main li'));
 </script>
-<script src="../js/script.js"></script>
+<script src="../js/editor.js"></script>
 </html>

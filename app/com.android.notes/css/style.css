@@ -1,0 +1,56 @@
+
+*{
+    touch-action: none!important;
+
+}
+.topbar{
+    width: 100%;
+    height: 48px;
+    font-size: 20px;
+    color: #fff;
+    text-indent: 1em;
+    background-color: #e75a30;
+    line-height: 48px;
+}
+.notes-main{
+    width: 100%;
+    height: calc(100% - 48px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.notes-main::-webkit-scrollbar{
+    opacity: 0;
+    transition: all .3s;
+    width: 10px;
+}
+.notes-main::-webkit-scrollbar:hover{
+    opacity: 1;
+}
+.notes-main ul li{
+    width: 100%;
+    height: 80px;
+    border-bottom: #eee solid 1px;
+}
+.notes-main ul li p.title{
+    font-size: 20px;
+    line-height: 55px;
+    text-indent: .5em;
+}
+.notes-main ul li p.date{
+    text-align: end;
+    padding-right:5px;
+    box-sizing: border-box;
+}
+.float-icon{
+    position: absolute!important;
+    right: 20px;
+    bottom: 70px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e75a30;
+    color: #fff;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+}
