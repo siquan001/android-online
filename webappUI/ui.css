@@ -1,9 +1,18 @@
+/* 引入Google Sans 字体 */
+@import url(https://fonts.googleapis.com/css2?family=Google+Sans);
+@import url(https://fonts.googleapis.com/css2?family=Roboto);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+SC);
+
 *{
     margin: 0;padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 body{
     width: 100%;
     height: 100%;
+    font-family: 'Roboto','Noto Sans SC',Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: #fff;
 }
 .quick-ui-topbar{
     width: 100%;
@@ -16,12 +25,17 @@ body{
 .ui-app-body{
     width: 100%;
     height: calc(100% - 60px);
+    position: relative;
+    overflow: scroll;
+}
+.ui-app-body::-webkit-scrollbar{
+    display: none;
 }
 ripple-span{
     width: 0;height: 0;position: absolute;
     display: block;
     transform: translate(-50%,-50%);
-    background-color: #fff;
+    background-color: #eee;
     animation: ripple .3s;
     border-radius: 50%;
 }
@@ -35,4 +49,85 @@ ripple-span{
         height: 150px;
         opacity: 0.1;
     }
+}
+.alert-build{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    top: 30px;left: 0;z-index: 990;
+}
+.alert-build .alert-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e3e3e3aa;
+    opacity: 0;
+    transition: opacity .3s;
+}
+.alert-build .alert-main{
+    position: absolute;
+    width: 80%;
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    box-shadow: 0 0 5px #aaa;
+    animation: alert .3s;
+}
+@keyframes alert {
+    0%{
+        opacity: 0.2;
+        top: 60%;
+    }100%{
+        opacity: 1;
+        top: 50%;
+    }
+}
+@keyframes alert-d {
+    0%{
+        opacity: 1;
+        top: 50%;
+    }100%{
+        opacity: 0.2;
+        top: 60%;
+    }
+}
+.alert-build .alert-main .alert-topbar{
+    line-height: 50px;
+    text-indent: 1em;
+    font-size:20px;
+}
+.alert-build .alert-main .alert-view{
+    box-sizing: border-box;
+    padding: 5px;
+    max-height: 550px;
+    overflow: hidden;
+    width: 100%;
+}
+.alert-build .alert-main .alert-btns{
+    overflow: hidden;
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+.alert-build .alert-main .alert-btns .btn{
+    font-size: 14px;
+    color: rgb(0, 255, 149);
+    line-height: 30px;
+    margin: 5px;
+    width: calc(33% - 10px);
+    text-align: center;
+}
+.alert-build .alert-main .alert-btns .btn.left{
+    float: left;
+}
+.alert-build .alert-main .alert-btns .btn.right{
+    float: right;
+}
+.alert-build .alert-main .alert-btns .btn.center{
+    position: absolute!important;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
 }

@@ -24,6 +24,7 @@ var topbar = $('.phone>.topbar'),
 if(localStorage.getItem(loname)==undefined){
     localStorage.setItem(loname,'{}');
 }
+window.message={};
 var userApp=JSON.parse(localStorage.getItem(loname));
 var AllInstallApp=BuiltInApp;
 for(var i in userApp){
@@ -218,4 +219,38 @@ function startPage(go,t){
         $(a).show();
     }
 }
+function showToast(e,t){
+    var a=document.createElement('div');
+    a.classList.add('toast');
+    a.innerHTML=e;
+    $('.over_toast').get()[0].append(a);
+    a.style.opacity='1';
+    setTimeout(function(){
+        a.style.opacity='0';
+        setTimeout(function() {
+            a.remove();
+        }, 300);
+    },t-300)
+}
+function showCustomToast(e,t){
+    var a=document.createElement('div');
+    a.classList.add('custoast');
+    a.innerHTML=e;
+    $('.over_toast').get()[0].append(a);
+    a.style.opacity='1';
+    setTimeout(function(){
+        a.style.opacity='0';
+        setTimeout(function() {
+            a.remove();
+        }, 300);
+    },t-300)
+}
 
+
+
+// kf();
+function kf(){
+    $('.loading').hide();
+    lockframe.hide();
+    startPage('com.android.notes');
+}

@@ -7,14 +7,13 @@ body{
     margin: 30px 0;
 }
 .tabs{
-    --tab:3;
-    width: calc(100% * var(--tab));
+    width: 300%;
     height: calc(100% - 100px);
     position: absolute;
     top: 0;left: 0;
 }
 .tabs .tab{
-    width: calc(100% / var(--tab));
+    width: calc(100% / 3);
     float: left;
     height: 100%;
     display: grid;
@@ -86,11 +85,4 @@ body{
 .appitem p{
     line-height: 24px;
     font-size: 14px;
-}
-@keyframes locked {
-    0%{
-        transform: scale(1.5);
-    }100%{
-        transform: scale(1);
-    }
 }
